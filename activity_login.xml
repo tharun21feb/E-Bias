@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".LoginActivity">
+
+    <!-- Login progress -->
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:id="@+id/email_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/login_img"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginBottom="40dp"
+                android:contentDescription="@string/login_txt"
+                app:srcCompat="@drawable/user" />
+
+            <Spinner
+                android:id="@+id/user"
+                android:layout_width="175dp"
+                android:layout_height="40dp"
+                android:layout_gravity="clip_horizontal|center"
+                android:layout_marginBottom="20dp"
+                android:entries="@array/users"
+                android:prompt="@string/userprompt"
+                tools:entries="@array/users" />
+
+            <Spinner
+                android:id="@+id/algoSelect"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:entries="@array/algorithms" />
+
+            <Spinner
+                android:id="@+id/server"
+                android:layout_width="175dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:entries="@array/servers"
+                android:prompt="@string/serverprompt"
+                android:spinnerMode="dropdown"
+                tools:entries="@array/servers"
+                tools:spinnerMode="dropdown" />
+
+            <Button
+                android:id="@+id/email_sign_in_button"
+                style="@android:style/Widget.Material.Button.Inset"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:text="@string/login_txt"
+                android:textStyle="bold"
+                tools:targetApi="lollipop" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
